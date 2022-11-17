@@ -1,0 +1,43 @@
+.footer {
+  padding: 1.2rem;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+      color: #16161a;
+      font-weight: 500;
+      font-size: 1.1rem;
+      opacity: 0.9;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    &__right {
+      a {
+        margin-left: 1.1rem;
+        font-size: 2rem;
+        color: #16161a;
+        text-decoration: none;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      flex-direction: column;
+
+      &__left {
+        font-size: 1rem;
+      }
+      &__right {
+        a {
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.box {
+  width: 32%;
+  margin: 1rem 0;
+  background-color: #fff;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+
+  img {
+    width: 100%;
+    height: 200px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  &-model {
+    border: 1px solid #16161a;
+    border-radius: 1rem;
+    width: 58px;
+    padding: 0 0.7rem;
+    margin: 1rem 0;
+  }
+  &-name {
+    font-size: 1.1rem;
+    margin: 0.7rem 0;
+    font-weight: 500;
+    color: #16161a;
+  }
+  &-price {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__more {
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    &__right {
+      span {
+        font-size: 1.2rem;
+
+        &:last-child {
+          color: #fe5b3d;
+          font-size: 0.8rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+  &-btn {
+    width: 100%;
+    height: 45px;
+    background-color: #474af0;
+    color: #fff;
+    border-radius: 0.5rem;
+    border: none;
+  }
+  @media screen and (max-width: 992px) {
+    width: 45%;
+  }
+  @media screen and (max-width: 550px) {
+    width: 95%;
+    margin: 1rem auto;
+  }
+}

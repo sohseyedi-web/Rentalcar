@@ -1,0 +1,19 @@
+.forms {
+  position: relative;
+  width: 100%;
+
+  input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    outline: none;
+    height: 40px;
+    padding-right: 2rem;
+  }
+  span {
+    position: absolute;
+    top: 10%;
+    right: 1%;
+    color: #16161a;
+  }
+}

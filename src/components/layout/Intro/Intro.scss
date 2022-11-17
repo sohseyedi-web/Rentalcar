@@ -1,0 +1,138 @@
+.intro {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("../../../assets/image.png");
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &-container {
+    padding-top: 10rem;
+
+    &__detail {
+      margin-top: 1.5rem;
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 500;
+
+        span {
+          color: #fe5b3d;
+        }
+      }
+      p {
+        margin: 1rem 0;
+        font-size: 1.1rem;
+        color: #16161a;
+      }
+      &-images {
+        img {
+          width: 150px;
+          margin-left: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__wrap {
+      &-form {
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+          rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        position: absolute;
+        content: "";
+        top: 75%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.3rem 1rem;
+        width: 60%;
+        border-radius: 0.5rem;
+
+        &__box {
+          display: flex;
+          flex-direction: column;
+          width: 25%;
+
+          span {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #16161a;
+          }
+          input {
+            padding: 0.8rem;
+            border-radius: 0.5rem;
+            background-color: #eee;
+            outline: none;
+            border: none;
+          }
+        }
+        &__btn {
+          width: 20%;
+
+          input {
+            height: 45px;
+            background-color: #fe5b3d;
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    background: none;
+    &-container {
+      text-align: center;
+
+      &__detail {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+      &__wrap {
+        &-form {
+          width: 95%;
+          right: 2.5%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 550px) {
+    background: none;
+    &-container {
+      text-align: center;
+
+      &__detail {
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+      &__wrap {
+        &-form {
+          top: 55%;
+          width: 95%;
+          right: 2.5%;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+
+          &__box,
+          &__btn {
+            width: 95%;
+            margin-bottom: 0.5rem;
+
+            span {
+              margin: 0.5rem 0;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

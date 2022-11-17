@@ -1,0 +1,112 @@
+.header {
+  width: 100%;
+  background-color: #eeeff1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem;
+
+  &-logo {
+    text-decoration: none;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &-nav {
+    display: flex;
+    margin: 0;
+
+    li {
+      position: relative;
+      margin: 0 1.5rem;
+
+      a {
+        text-decoration: none;
+        color: #16161a;
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 3px;
+          transition: all 0.5s ease-in-out;
+          background: linear-gradient(#fe5b3d, #ffac38);
+          border-radius: 0.1rem;
+          bottom: -4px;
+          right: 0;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &-auth {
+    background: #fe5b3d;
+    color: #16161a;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+
+    a {
+      color: #16161a;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.5s;
+
+      &:hover {
+        color: inherit;
+        transition: 0.5s;
+      }
+    }
+  }
+  &-menu {
+    display: none;
+  }
+}
+
+// @media screen and (max-width: 768px) {
+//     &-nav {
+//       position: absolute;
+//       content: "";
+//       display: none;
+//       flex-direction: column;
+//       top: 85%;
+//       background-color: #fff;
+//       width: 100%;
+//       right: 0%;
+//       opacity: 0;
+//       text-align: center;
+//       transition: opacity ease-in-out 0.4s;
+
+//       li {
+//         margin: 1rem 0;
+
+//         a {
+//           &::after {
+//             right: 4%;
+//           }
+//         }
+//       }
+
+//       &.active-nav {
+//         display: flex;
+//         opacity: 1;
+//         transition: opacity ease-in-out 0.4s;
+//       }
+//     }
+//     &-menu {
+//       display: block;
+//       font-size: 2rem;
+//       cursor: pointer;
+//       margin-right: 3rem;
+//     }
+//   }

@@ -1,0 +1,48 @@
+.menu {
+  padding-top: 6rem;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    width: 1500px;
+    margin: 0 auto;
+
+    &__filter {
+      width: 17%;
+      border-radius: 0.3rem;
+      margin: 1rem 0;
+      height: 450px;
+      z-index: 2;
+      background-color: #fff;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      border: 2px solid #474af0;
+
+      &-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #16161a;
+        margin: 1rem 0;
+        border-bottom: 2px solid #474af0;
+        padding: 0 0.5rem 0.5rem 0;
+      }
+      &-items {
+        padding: 0.5rem;
+
+        &__txt {
+          margin: 0.5rem 0;
+          padding: 0.3rem;
+          cursor: pointer;
+        }
+      }
+    }
+    &__content {
+      width: 80%;
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}
