@@ -1,5 +1,6 @@
 import { useContext, createContext, useReducer } from "react";
 import { dataItem } from "./../data/data";
+import _ from "lodash";
 
 export const rentAction = createContext();
 export const rentActionDispatch = createContext();
@@ -17,17 +18,13 @@ const rentReducer = (state, action) => {
       const updateItem = { ...item[itemIndex] };
       return { ...state, rentCar: updateItem };
     }
-    case "SORT_ITEM": {
-    }
-    case "SEARCH_ITEM": {
-      const value = action.event.target;
-      if (value === "") {
-        return dataItem;
+    case "SORT_PRICE": {
+      const value = action.Priceoptions.value;
+      const products = [...dataItem];
+      if (value === "lowest") {
+        return _.orderBy(products, ["price"], ["asc"]);
       } else {
-        const filterValue = dataItem.filter((data) =>
-          data.name.includes(value)
-        );
-        return filterValue;
+        return _.orderBy(products, ["price", ["desc"]]);
       }
     }
     default:
