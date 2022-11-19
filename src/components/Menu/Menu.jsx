@@ -1,17 +1,23 @@
 import "./Menu.scss";
 import Container from "./../../container/Container";
 import { dataItem } from "./../../data/data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Helmet from "react-helmet";
 import Product from "./../common/Product/Product";
 import FilterSide from "./FilterSide/FilterSide";
+import { useRent } from "../../context/rentProvider";
 
 const Menu = () => {
+  const data = useRent();
   const [search, setSearch] = useState("");
 
   const handleSearch = () => {
-    return dataItem.filter((data) => data.name.toLowerCase().includes(search));
+    return data.filter((d) => d.name.toLowerCase().includes(search));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [data]);
 
   return (
     <Container>

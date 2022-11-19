@@ -4,6 +4,7 @@ import SearchBar from "./../../common/SearchBar/Searchbar";
 import { useRentDispatch } from "../../../context/rentProvider";
 
 const Modeloptions = [
+  { value: "", label: "همه" },
   { value: "honda", label: "هوندا" },
   { value: "porsche", label: "پورشه" },
   { value: "chevrolet", label: "شورلت" },
@@ -27,9 +28,19 @@ const FilterSide = ({ search, setSearch }) => {
   const [price, setPrice] = useState("");
   const dispatch = useRentDispatch();
 
-  const priceHandler = (Priceoptions) => {
+  const changePriceHandler = (Priceoptions) => {
     dispatch({ type: "SORT_PRICE", Priceoptions });
     setPrice(Priceoptions);
+  };
+
+  const changeYearHandler = (Yearoptions) => {
+    dispatch({ type: "SORT_YEAR", Yearoptions });
+    setYear(Yearoptions);
+  };
+
+  const changeModelHandler = (Modeloptions) => {
+    dispatch({ type: "SORT_MODEL", Modeloptions });
+    setModel(Modeloptions);
   };
 
   return (
@@ -37,13 +48,23 @@ const FilterSide = ({ search, setSearch }) => {
       <div className="menu-container__filter-title">فیلتربندی بر اساس</div>
       <div className="menu-container__filter-items">
         <SearchBar search={search} setSearch={setSearch} />
-        <Selected place="مدل ماشین" value={model} options={Modeloptions} />
-        <Selected place="سال تولید" value={year} options={Yearoptions} />
+        <Selected
+          place="مدل ماشین"
+          onChange={changeModelHandler}
+          value={model}
+          options={Modeloptions}
+        />
+        <Selected
+          place="سال تولید"
+          value={year}
+          options={Yearoptions}
+          onChange={changeYearHandler}
+        />
         <Selected
           place="قیمت ماشین"
+          onChange={changePriceHandler}
           value={price}
           options={Priceoptions}
-          onChange={priceHandler}
         />
       </div>
     </div>

@@ -1,11 +1,11 @@
 .menu {
   padding-top: 6rem;
+  margin: 0 auto;
+  width: 1500px;
 
   &-container {
     display: flex;
     justify-content: space-between;
-    width: 1500px;
-    margin: 0 auto;
 
     &__filter {
       width: 17%;
@@ -43,6 +43,20 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+      overscroll-behavior-y: unset;
+      width: 95vw;
+
+      &__filter {
+        width: 90%;
+      }
+      &__content {
+        width: 95vw;
+        flex-direction: column;
+      }
     }
   }
 }

@@ -6,7 +6,9 @@ import Empty from "../common/isEmpty/Empty";
 import Helmet from "react-helmet";
 
 const Auth = () => {
-  const { rentCar } = useRent();
+  const data = useRent();
+
+  const hasCarRent = data.filter((d) => d.rentLen > 0);
 
   return (
     <Container>
@@ -14,12 +16,12 @@ const Auth = () => {
         <title>ثبت درخواست</title>
       </Helmet>
       <div className="container">
-        {rentCar.length === 0 ? (
+        {hasCarRent.length === 0 ? (
           <Empty title={"لطفا یک ماشین را انتخاب کنید"} />
         ) : (
           <div className="form">
             <form action="" className="form-wrap">
-              <h3 className="form-wrap__title"> ثبت درخواست {rentCar.name}</h3>
+              <h3 className="form-wrap__title"> ثبت درخواست {hasCarRent[0].name}</h3>
               <div className="form-wrap__progress">
                 <div className="form-wrap__progress-line" id="progress"></div>
                 <div className="form-wrap__progress-steps pr-steps-active"></div>

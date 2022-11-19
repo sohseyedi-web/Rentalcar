@@ -1,11 +1,12 @@
 import "./Products.scss";
-import { dataItem } from "./../../../data/data";
 import Product from "../../common/Product/Product";
+import { Link } from "react-router-dom";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { useRent } from "../../../context/rentProvider";
 
 const Products = () => {
-
-
-  const filterData = dataItem.filter((d) => d.id <= 3);
+  const data = useRent();
+  const filterData = data.filter((d) => d.id <= 3);
 
   return (
     <section className="cars">
@@ -15,6 +16,12 @@ const Products = () => {
           {filterData.map((item) => (
             <Product item={item} key={item.id} />
           ))}
+        </div>
+        <div className="cars-container__more">
+          <Link to={"/store"}>
+            موارد بیشتر
+            <RiArrowDropDownLine size={28} />
+          </Link>
         </div>
       </div>
     </section>
