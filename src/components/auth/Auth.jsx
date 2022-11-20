@@ -25,7 +25,7 @@ const Auth = () => {
               <div className="form-wrap__progress">
                 <div className="form-wrap__progress-line" id="progress"></div>
                 <div className="form-wrap__progress-steps pr-steps-active"></div>
-                <div className="form-wrap__progress-steps"></div>
+                <div className="form-wrap__progress-steps "></div>
                 <div className="form-wrap__progress-steps"></div>
                 <div className="form-wrap__progress-steps"></div>
               </div>

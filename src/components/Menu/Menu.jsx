@@ -25,7 +25,7 @@ const Menu = () => {
         <title>نمایشگاه</title>
       </Helmet>
       <section className="menu">
-        <div className="menu-container">
+        <div className="menu-container container-fluid">
           <FilterSide search={search} setSearch={setSearch} />
           <div className="menu-container__content">
             {handleSearch().map((item) => (

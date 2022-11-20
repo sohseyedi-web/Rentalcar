@@ -1,7 +1,6 @@
 .menu {
   padding-top: 6rem;
   margin: 0 auto;
-  width: 1500px;
 
   &-container {
     display: flex;
@@ -46,15 +45,35 @@
     }
 
     @media screen and (max-width: 992px) {
-      flex-direction: column;
-      overscroll-behavior-y: unset;
-      width: 95vw;
 
       &__filter {
-        width: 90%;
+        width: 20%;
       }
       &__content {
-        width: 95vw;
+        width: 75%;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+
+      &__filter {
+        width: 100%;
+        height: auto;
+      }
+      &__content {
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      flex-direction: column;
+
+      &__filter {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+      }
+      &__content {
+        width: 100%;
         flex-direction: column;
       }
     }
