@@ -21,7 +21,6 @@
       position: relative;
       display: flex;
       justify-content: space-between;
-      counter-reset: step;
 
       &::before,
       &-line {
@@ -48,14 +47,11 @@
         justify-content: center;
         font-weight: 500;
         color: #fff;
-
-        &::before {
-          counter-increment: step;
-          content: counter(step);
-        }
+        transition: all 0.4s ease-in-out;
 
         &.pr-steps-active {
           background-color: #474af0;
+          transition: all 0.4s ease-in-out;
         }
       }
     }
