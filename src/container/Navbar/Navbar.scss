@@ -70,6 +70,45 @@
   }
   &-menu {
     display: none;
+    color: #fe5b3d;
+  }
+
+  @media screen and (max-width: 768px) {
+    &-nav {
+      position: absolute;
+      content: "";
+      display: none;
+      flex-direction: column;
+      top: 85%;
+      background-color: #fff;
+      width: 100%;
+      right: 0%;
+      opacity: 0;
+      text-align: center;
+      transition: opacity ease-in-out 0.4s;
+
+      li {
+        margin: 1rem 0;
+
+        a {
+          &::after {
+            right: 4%;
+          }
+        }
+      }
+
+      &.active-nav {
+        display: flex;
+        opacity: 1;
+        transition: opacity ease-in-out 0.4s;
+      }
+    }
+    &-menu {
+      display: block;
+      font-size: 2rem;
+      cursor: pointer;
+      margin-right: 3rem;
+    }
   }
 }
 
